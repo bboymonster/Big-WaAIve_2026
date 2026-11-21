@@ -1,0 +1,15 @@
+{
+  "name": "big-waaive-template",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n \"backend,frontend\" -c \"blue,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && (uvicorn main:app --reload --port 8000 || .venv\\Scripts\\uvicorn main:app --reload --port 8000 || .venv/bin/uvicorn main:app --reload --port 8000)",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
